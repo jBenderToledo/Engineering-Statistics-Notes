@@ -1,0 +1,101 @@
+\documentclass[]{article}
+\usepackage{amsmath}
+
+%opening
+\title{Engineering Statistics Lecture IX}
+\author{Jonathan Bender}
+\date{September 26, 2019}
+
+\begin{document}
+	
+	\maketitle
+	
+	\begin{abstract}
+		HW \#1 is due October 1, 2019
+		
+		HW \#2 is due October 10, 2019:
+		\begin{itemize}
+			\item Section 2.3 \#23-37 odd
+			\item Section 2.4 \#49-65 odd
+			\item Section 2.5 \#73-93 odd
+		\end{itemize}
+	\end{abstract}
+	
+	\section{Example: highway patrol}
+	
+	
+	Spoz the highway patrol guys have nothing better to do than conduct random DUI checks.
+	Historically-speaking, 10\% of drivers are legally-impaired in any given instance.
+	If they check 50 drivers in an hour, what is the probability that 6 of the 50 are impaired?
+	
+	Rephrase: What is $P(6$ of $50)$?
+	
+	CONTINUE LATER
+	
+	\section{Example: Noah again}
+	
+	Spoz Noah works at an electronics store. Let event A be the case in which a customer buys a stylus and B be the case where a customer buys an external drive, such that S is the set of cases wherein a customer buys a laptop.
+	Spoz that $P(A) = \frac{1}{4}$ and $P(B) = \frac{1}{5}$ and that $P(A\cap B) = \frac{1}{10}$.
+	
+	What is $P(B|A)$?
+	\begin{align*}
+	P(B|A) &= \dfrac{P(B\cap A)}{P(A)}
+	     \\&= \dfrac{.10}{.25}
+	     \\&= 0.4\\
+	P(A|B) &= \dfrac{P(A\cap B)}{P(B)}
+	     \\&= \dfrac{.10}{.20}
+	     \\&= 0.5
+	\end{align*}
+	
+	B is independent from A because $P(A|B)\neq P(A)$.
+	
+	\begin{equation}
+	(A\ indep.\ B) \iff P(A|B) = P(A)
+	\label{Formula of Independence}
+	\end{equation}
+	
+	\section{Brian at the ER}
+	
+	Spoz Brian is working the Friday night shift at the ER: Three events: Pediatric, Geriatric, Average-age adults.
+	\begin{align*}
+	&P(Pediatric) &= 0.25 \\
+	&P(Geriatric) &= 0.15 \\
+	&P(Average)   &= 0.60
+	\end{align*}
+	You might notice that the three events above are the entire sample set and, therefore, definitively mutually exclusive.
+	
+	Now, B is the event that a patient will return within 3 days:
+	\begin{align*}
+	&P(B|Pediatric) &= 0.10\\
+	&P(B|Geriatric) &= 0.80\\
+	&P(B|Average)   &= 0.50
+	\end{align*}
+	Note that just because the initial given cases were independent does NOT mean that the cases of them being a given for a particular event will add up.
+	
+	\begin{align*}
+	P(Pediatric|B) &= P(B|Pediatric)\dfrac{P(Pediatric)}{P(B)}\\
+	P(Geriatric|B) &= P(B|Geriatric)\dfrac{P(Geriatric)}{P(B)}\\
+	  P(Average|B) &= P(B|Average)\dfrac{P(Average)}{P(B)}
+	\end{align*}
+	
+	\begin{align*}
+	P(B) &=\ & P(B|Pediatric) * P(Pediatric)\\
+	     &\ +& P(B|Geriatric) * P(Geriatric)\\
+	     &\ +& P(B|Average) * P(Average)\\
+	     &=\ & (0.1)(0.25) + (0.80)(0.15) + (0.50)(0.60)\\
+	     &=\ & 0.181
+	\end{align*}
+	
+	Therefore,
+	
+	\begin{align*}
+	P(Pediatric|B) &= 0.10\dfrac{0.25}{0.181} \\
+	P(Geriatric|B) &= 0.80\dfrac{0.15}{0.181} \\
+	P(Average|B)   &= 0.60\dfrac{0.50}{0.181}
+	\end{align*}
+	
+	Which doesn't make sense, so we'll get back to it on Tuesday, October 1, 2019
+	
+	$$\int_{-\infty}^{+\infty}f(x)dx = 1$$
+	
+\end{document}

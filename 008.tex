@@ -1,0 +1,58 @@
+\documentclass[]{article}
+\usepackage{amsmath}
+
+%opening
+\title{Engineering Statistics Lecture VIII}
+\author{Jonathan Bender}
+\date{September 19, 2019}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\end{abstract}
+
+\section{Introduction}
+Suppose that we have N equally likely outcomes s.t. $N \geq 1$:
+For some event A in the sample set:
+P(A) = $\dfrac{1}{n}$
+
+\subsection{Ordered pairs}
+
+Spoz there are $n_1$ ways to do one operation and $n_2$ ways to do a second operation. Let $(x_1, x_2)$ be an ordered pair such that $x_1$ is one of the $n_1$ ways, $x_2$ is one of the $n_2$ ways. So, $n_1$ is the number of manufacturers and $n_2$ is the number of models; (ford, explorer), for instance, is a valid pair.
+
+If operation $x_1$ can be performed $n_1$ ways and likewise with $x_2$ and $n_2$, then there are $n_1 * n_2$ ways to perform both. Therefore, we use the multiplicative rule.
+
+\section{Fast Food Example}
+Suppose that we go to Subway to get a footlong sub. We can construct the sandwich using any of the following:
+\begin{itemize}
+	\item 6 types of bread
+	\item 7 meat
+	\item 8 cheese
+	\item 2 baking styles
+	\item 12 types of vegetables
+	\item 9 sauces
+	\item 4 seasonings
+\end{itemize}
+So, the number of different types of subs (assuming that we only use one item of each set) is $6 * 7 * 8 * 2 * 12 * 9 * 4 = 290,304$ different ways to construct a footlong sub at Subway.
+\section{Lottery Example}
+Suppose that you are one of those poor fools that plays the lottery. We want to know what the chances are of us winning. That chance is as follows:
+\begin{itemize}
+	\item 5 unique numbers called, which range from 1 to 69.
+	\item 1 completely independent number ranging from 1 to 26.
+\end{itemize}
+
+How many different sets numbers are there to call? Well, let's think about this: each number rules out the possibility to the subsequent numbers existing.
+So, we have 69 possibilities for the first number, 68 for the second, 67, 66, 65, and then 26 numbers for the independent number.
+By the multiplicative rule, we have $69*68*67*66*65*26$.
+This can be rewritten as:
+\[\frac{69!}{64!}*26\]
+
+For a fair game, P(win) * the winning total is equal to the cost of playing.
+
+\begin{equation*}
+	P(win) * prize(win) = cost()
+\end{equation*}
+
+\end{document}

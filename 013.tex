@@ -1,0 +1,85 @@
+
+\documentclass[]{article}
+\usepackage{amsmath}
+
+%opening
+\title{Engineering Statistics Lecture XIII}
+\author{Jonathan Bender}
+\date{October 17, 2019}
+
+\begin{document}
+	
+	\maketitle
+	
+	\begin{abstract}	
+		HW \#3 is due October 31, 2019:
+		\begin{itemize}
+			\item Chapter 4 \#1-31 odd
+		\end{itemize}
+	
+		HW \#4 is due October 20, 2019 at 8:00 PM:
+		
+		Submit 2 opportunity questions with, preferably, correct answers.
+		\begin{itemize}
+			\item Multiple guess questions
+			\item Extended response questions
+		\end{itemize}
+	
+		Opportunity \#0 Given October 22, 2019;
+		
+		Opportunity \#0 Due October 24, 2019.
+	\end{abstract}
+	
+	\section{Brendan's concrete something or another}
+	f(x) is a line from [0,2] over [0,1], then from [2,0] over [1,2]
+	\subsection{Find A: A = 1}
+	\subsection{Find $\mu_w:\ \mu_w = 1$}
+	
+	
+	\pagebreak
+	\subsection{Find $\sigma_w^2$}
+	Variance: $$ \sigma_w^2 = \dfrac{\sum_{i=1}^{n}(f(x_i) - \mu)^2}{n-1} = \int_{all\ x}(f(x) - \mu)dx$$
+	
+	$$\to \sigma_w^2 = E[x^2] - E[x]^2$$
+	
+	Big brain time: $\mu = E[x] = \int xf(x)dx$.
+	
+	\begin{align*}
+	E[w^2] = \int w^2f(w)dw &= \int_0^1 w^2*wdw + \int_1^2 w^2(2-w)dw \\
+	&= \frac{w^4}{4}|_0^1 + \frac{2}{3}w^3|_1^2 - \frac{w^4}{4}|_1^2\\
+	&= \frac{1-0}{4} + \frac{2}{3}(8-1) - \frac{1}{4}(16 - 1)\\
+	&= \frac{7}{6}
+	\end{align*}
+	
+	\subsection{Margin: 10w - 20}
+	\subsection{Find E[Margin]}
+	\begin{align*}
+		E[Margin] &= \int(10W-20)f(w)dW \\
+		&= 10\int(W-2)f(W)dW \\
+	\end{align*}
+	
+	For a linear function f(x) of random variable X,
+	E[f(x)] = $A\mu_x + b$ $$\to E[f(x)] = AE[x] + B$$
+	$$\to E[10W - 20] = 10(1) - 20 = -10$$ (See 1.1)
+	
+	$$\to \sigma^2(f(x)) = A^2\sigma_x^2$$
+	
+	\pagebreak
+	\subsection{Find cumulative distribution function (CDF)}
+	CDF - Shows how probability mass accumulates as x goes from $-\infty$ to X.
+	
+	\begin{align*}
+		f(X) CDF &= \int_{-\infty}^Xf(\tau)d\tau\\
+		         &= \int_0^X\tau d\tau \iff x\leq 1 \\
+		     OR\ &= \int_0^1\tau d\tau + \int_1^X (2-\tau )d\tau \iff X\in [1,2] \\
+		         &= \frac{1}{2}\tau^2|_0^1 + [2\tau - \frac{1}{2}\tau^2]^X_1 \\
+		         &= 2x - \frac{1}{2}x^2 - 1 \iff X\in [1,2]
+	\end{align*}
+	
+	\subsection{Find p($\frac{2}{5}\leq W \leq \frac{4}{3})$}
+	\begin{align*}
+		&= CDF(\frac{4}{3}) - CDF(\frac{2}{5}) \\
+		&= -\frac{1}{2}(\frac{4}{25}) + \frac{1}{2} + 2\frac{4}{3} - \frac{1}{2}\frac{16}{9} - 2 + \frac{1}{2} 
+	\end{align*}
+	
+\end{document}

@@ -1,0 +1,63 @@
+\documentclass[]{article}
+\usepackage{amsmath}
+
+%opening
+\title{Engineering Statistics Lecture XI}
+\author{Jonathan Bender}
+\date{October 1, 2019}
+
+\begin{document}
+	
+	\maketitle
+	
+	\begin{abstract}	
+		HW \#2 is due October 15, 2019:
+		\begin{itemize}
+			\item Section 2.3 \#23-37 odd
+			\item Section 2.4 \#49-65 odd
+			\item Section 2.5 \#73-93 odd
+		\end{itemize}
+	
+		NO CLASS THURSDAY, OCTOBER 10, 2019
+	\end{abstract}
+
+	\section{Random Variables}
+	For a given sample space S, a random variable is any rule that associates a number with each outcome in S, given that the domain is S and the range $R \subseteq S$.
+	
+		\subsection{Example: Roll a die.}
+		X can be a random variable means that a roll of the die can be any value such that $x\in\{1, 2, 3, 4, 5, 6\}$. This works and X is a random variable.
+	
+		\subsection{Example: Flip a coin.}
+		X can be a random variable means that a flip of the coin can yield \{H,T\}; Because the set can be enumerated (mapped to a countable set of numbers), X is a random variable.
+	
+		\subsection{Example: Eye color}
+		Let S be \{brown, blue, hazel, green\}: X can be some \{100 if brown, 5 if blue, 2 if hazel, 50 if green\}. You do not have to have an enumerated set from 1 to however many items are in the set for it to be a "random variable", as frustrating as it may be to those that you are working with.
+	
+	\section{Probability Density Function (PDF)}
+	A probability density function defines how the total probability is allocated (distributed) over all possible values of X.
+	
+	Roll a die: X is the number result. Let f(X) be the PDF. $$f(X) \in \{\dfrac{1}{6}\}\iff X\in\{1\to 6\}\}$$
+	
+	The sum of this PDF f(x) is as follows:
+	\[\int_{x\in X}^{}f(x)dx = 1\]
+	
+	\subsection{Concrete stuff}
+	Brendan drives a cement mixer. He charges \$100 + $\$\frac{80}{yd^3}$.
+	
+	f(x) = \{A for all x between 0 and 10, 0 otherwise\}.
+	
+	Find a:
+	
+	$$\int_0^{10}Adx = 1 \\
+	\to A(10 - 0) = 1 \\
+	\to A = \frac{1}{10}.$$
+	
+	Find b by the average value theorem:
+	
+	$$\sum_{all\ X}xf(x)$$ for discrete values,
+	$$\int_{all\ X}xf(x)dx$$ for continuous values.
+	
+	$$ B = \frac{1}{10}\int_{0}^{10}xdx = \frac{1}{20}x^2|^{10}_{0} = 5$$
+	$$\to B = 5$$
+	
+\end{document}

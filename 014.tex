@@ -1,0 +1,42 @@
+
+\documentclass[]{article}
+\usepackage{amsmath}
+
+%opening
+\title{Engineering Statistics Lecture XIV}
+\author{Jonathan Bender}
+\date{October 22, 2019}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section{What if we want E[g(x)]?}
+		Spoz that Brad runs a hubcap replacement business: Brad sees a lot of hubcaps laying in a ditch somewhere. Historically, Brad sells 100 hubcaps per month in the winter and doubles to 200 per month in the summer time. 6 months 100/month, 6 months 200/month.
+		
+		Let X be the number of hubcaps being sold per month, random variable as described above. So, $\mu_X = 150$.
+		
+		However, if Brad's profit is 100X - \$50, continue later.
+	
+		\begin{equation}
+			E[g(x)] = \int_{-\infty}^{+\infty}g(x)f(x)dx
+		\end{equation}
+		For any PDF f(x) that takes the same parameter as g(x).
+		
+	\section{Joint Probability}
+		Spoz Khan is a manager at Starbucks. He has to fill three different coffees. Spoz we order 4 light brew, five regular brew, and 3 dark roast coffees.
+		
+		Now: Nick works for Khan, but isn't so detail-oriented. Nick selects 3 boxes at random. What are the chances that 2 of 3 are light roast and that 1 is dark roast?
+		
+		Well, let's think about this in a different way -- There are three or more "random variables" x, y, and z that are the numbers of light brew, regular brew, and dark brew respectively.
+		
+		If we know the number of light brew and regular brews (2 and 0 respectively), then we know that the number of dark brews is 1.
+		
+		So: $$P(X = x, Y = y) = \dfrac{\binom{4}{x}\binom{5}{y}\binom{3}{3-x-y}}{\binom{12}{3}}$$
+		
+		$$ P(2l1d) = \dfrac{\binom{4}{2} * \binom{5}{0} * \binom{3}{1} }{\binom{4 + 5 + 3}{3}}$$
+		
+		$$\to P(2l1d) = \dfrac{18}{220}$$
+	
+	
+\end{document}

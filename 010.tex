@@ -1,0 +1,92 @@
+\documentclass[]{article}
+\usepackage{amsmath}
+
+%opening
+\title{Engineering Statistics Lecture X}
+\author{Jonathan Bender}
+\date{October 1, 2019}
+
+\begin{document}
+	
+	\maketitle
+	
+	\begin{abstract}	
+		HW \#2 is due October 15, 2019:
+		\begin{itemize}
+			\item Section 2.3 \#23-37 odd
+			\item Section 2.4 \#49-65 odd
+			\item Section 2.5 \#73-93 odd
+		\end{itemize}
+	
+		Opportunity \#0 is given October 22, 2019 and due October 24, 2019.
+	\end{abstract}
+	
+	\section{Brad at the Best Buy}
+	
+	Spoz that Brad repairs computers at Best Buy:
+	\begin{itemize}
+		\item HP
+		\item Toshiba
+		\item ASUS
+	\end{itemize}
+
+	So:
+	
+	\begin{itemize}
+		\item P(HP) = 0.1
+		\item P(Toshiba) = 0.3
+		\item P(ASUS) = 0.6
+	\end{itemize}
+	s.t. S is the set of people who buy a laptop at Best Buy.
+	Let B be the event of needing repair s.t. the laptop was sold at Brad's particular store.
+	
+	\begin{itemize}
+		\item P(B|HP) = 0.05 
+		\item P(B|Toshiba) = 0.25 
+		\item P(B|ASUS) = 0.15
+	\end{itemize}
+
+	The resulting tree extends into HP, Toshiba, ASUS, each of which extend into B and B'.
+	
+	$$P(B) = \sum_{A_i\in Best\ Buy}P(B|A_i)P(A_i)$$
+	
+	\begin{align*}
+		P(B) &= 0.05*0.10 + 0.25*0.3 + 0.6*0.15 \\
+		     &= 0.005 + 0.075 + 0.240 \\
+		     &= 0.32
+	\end{align*}
+	\pagebreak
+	\section{Bayes's Theorem}
+	\begin{align*}
+	\{A_1, A_2, A_3,...,A_k\}&\ is\ mutually\ exclusive\\ 
+	\rightarrow P(B) &= \sum_{i = 1}^{k}P(B|A_i)*P(A_i) \\
+	\rightarrow P(B) &= \sum_{i = 1}^{k}P(B\cap A_i) \\
+	P(A_j|B) &= \dfrac{P(A_j\cap B)}{P(B)} \\
+	\rightarrow P(A_j|B) &= \dfrac{P(B|A_j)P(A_j)}{
+		\sum_{i=1}^{k}P(B|A_i)P(A_i)
+	}\\
+	\rightarrow P(A_j|B) &= \dfrac{P(B\cap A_j)}{\sum_{i=1}^{k}(P(B\cap A_i))}
+	\end{align*}
+	Or: The probability of a given event given B is equivalent to the chance of that event and B happening (or B given that event times its own inherent probability) divided by the sum of all cases of B happening given another event.
+	
+	\section{Medical company stuff}
+	Spoz a medical company devises a new test for a medical condition. 1 out of 1,000 people has the condition. This test yields a positive result 99\% of the time if the person has the condition. It yields a negative result 98\% of the time if the person does NOT have the condition.
+	
+	Let C be the chance that a person has a condition: P(C) = 0.001, P(C') = 0.999. Test result is positive (P), or negative (P').
+	
+	\begin{itemize}
+		\item P(C) = 0.001, P(C') = 0.999
+		\item P(P$|$C) = 0.99 (true positive), P(P'$|$C) = 0.01 (false negative)
+		\item P(P$|$C') = 0.02 (false positive), P(P'$|$C') = 0.98 (true negative)
+	\end{itemize}
+	Therefore:
+	\begin{itemize}
+		\item $P(P\cap C) = P(P|C)P(C) = 0.00099$
+		\item $P(P'\cap C) = P(P'|C)P(C) = 0.00001$
+		\item $P(P\cap C') = P(P|C')P(C') = 0.01998$
+		\item $P(P'\cap C') = P(P'|C')P(C') = 0.97902$
+	\end{itemize}
+
+	In application, we would want the chances of P(P'|C') to be as low as possible so that there are as few cases as possible of patients seeking restitution for falsely-implemented processes.
+	
+\end{document}
