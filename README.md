@@ -1,4 +1,4 @@
-These are class notes made by a college student who has no certification in any way, shape, or form as of the time of initialization of the repo (Nov. 3, 2019). They were made moreso to learn LaTeX than they were to be an informative font of knowledge and the spotty quality inside reflects as much.
+These are class notes made by a college student who has no certification in any way, shape, or form as of the time of initialization of the repo (Nov. 3, 2019). They were made to learn LaTeX and to become better at general communication by singling out main ideas into something that I can reference and look at later in the future when I might not remember the material quite as well as I did at the time that I was in the class.
 
 # Disclaimer
 
