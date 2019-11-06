@@ -1,0 +1,61 @@
+\documentclass[]{article}
+\usepackage{amsmath}
+
+%opening
+\title{Engineering Statistics Preface}
+\author{Jonathan Bender}
+\date{Sometime in August 2019}
+
+\begin{document}
+
+	\maketitle
+	
+	Welcome to Engineering Statistics! In this document, I will make the basic setup and statements that will be needed for understanding Lecture 7 onward. I did not record the first six lectures, as they seemed to be used to get people up to speed on definitions and whatnot. All lectures are given by my professor and notes of varying quality are recorded here.
+	
+	\section{Requirements}
+		The course is made under the presumption that anyone taking the course has an understanding of multivariable calculus, which includes things such as surface integration, multiple integration, basic derivatives, integration by parts, and possibly gradient vectors. Requirements posted here are subject to change up until when the course has been finished (December 2019).
+	
+	\pagebreak
+	\section{Definitions that concern sets.}
+		\subsection{Set}
+			A defined collection of items. Typically expressed as a comma-separated list in curly braces like so: \{1,2,3,4,5\}. Types do not necessarily have to match -- 
+			\subsubsection{Infinite set}
+				A set which has no defined size except in relation to other infinite sets.
+			\subsubsection{Finite set}
+				A set that is countable and whose size is expressible as a number.
+			\subsubsection{Continuous set}
+				A set whose contents exist along a continuum; if a and b exist in a set, all possible values that are comparatively between a and b must also exist in a continuous set that contains a and b. By definition, this set must be infinite.
+			\subsubsection{Discrete set}
+				A set whose contents are expressly discontinuous in nature.
+		\subsection{Subset}
+			A set which is defined to contain only items from one particular other set. "A is a subset of B" is expressible as $A \subset B$.
+			\subsubsection{Proper subset}
+				A set which exists as a subset but may also possibly be equivalent to the set which it is a subset of. "A is a proper subset of B" is expressible as $A \subseteq B$.
+		\pagebreak
+		\subsection{Union}
+			The set which is defined upon the collection of all unique elements of two or more sets. "A union B" is expressible as $A \cup B$. Colloquially referred to as "setwise or", or "disjunction".
+		\subsection{Intersection}
+			The set which is defined upon the collection of all shared elements between two or more sets. "A intersecting B" is expressible as $A \cap B$. Colloquially referred to as "setwise and", or "conjunction".
+		\subsection{Negation / Complement}
+			The set which is defined upon the collection of all items in the sample space which are NOT in the operand set. "A complement" is expressed as $A'$ or $\bar{A}$. Colloquially referred to as "setwise not".
+		\subsection{DeMorgan's Rule for Sets}
+			The negation of the disjunction is equvalent to the conjunction of the negations.
+			$$(A\cup B)' = A' \cap B'$$
+			The negation of the conjunction is equivalent to the disjunction of the negations.
+			$$(A\cap B)' = A' \cup B'$$
+		
+	
+	\pagebreak
+	\section{Definitions which concern probability.}
+		\subsection{Sample space / population}
+			A set that is "given" for a particular context; for instance, if the experiment were a question of how many people believe that gravity is real, then the sample set is implied to be all people. 
+		\subsection{Sample set}
+			A set that is recorded as a subset of the population; in most cases, this is the set which is defined as a source of data.
+		\subsection{P-value}
+			A value in the continuous range [0,1] which represents the probability of an occurrence in the given sample set. It is asserted that the sum of all p-values of all possible occurrences should equal 1 exactly.
+
+	\pagebreak
+	
+	\section{Exeunt.}
+		You are now prepared for Engineering Statistics, just short of the math.
+\end{document}

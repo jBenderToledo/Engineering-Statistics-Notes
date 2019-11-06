@@ -8,76 +8,78 @@
 
 \begin{document}
 
-\maketitle
+	\maketitle
 
-\begin{abstract}
-Homework \#1 is due October 1, 2019:
-Chapter 2.2 \# 1-19 odd questions.
-Check answers in the back of the textbook.
-\end{abstract}
+	\begin{abstract}
+	Homework \#1 is due October 1, 2019:
+	Chapter 2.2 \# 1-19 odd questions.
+	Check answers in the back of the textbook.
+	\end{abstract}
 
-\section{Set Intersection}
-Intersection is the overlap of two or more sets and what elements are contained by all sets being intersected.
-\begin{equation}
-	P(A \cup B) = P(A) + P(B) - P(A\cap B)
-	\label{Probability of union}
-\end{equation}
-
-\subsection{Example: Setwise XOR}
-\begin{abstract}
-	Given that $P(A) = \frac{1}{a}$ and $P(B) = \frac{1}{b}$ and that $P(A\cap B) = P(B\cap A) = \frac{1}{ab}$, find $P(X)$ s.t. $X = A \oplus B = (A' \cap B) \cup (A \cap B')$.
-\end{abstract}
-Let's break this into four subproblems:
-\begin{enumerate}
-	\item Find $P(A')$ and $P(B')$.
-	\item Find $P(A \cap B').$
-	\item Find $P(B \cap A').$
-	\item Suppose that the answer to questions 2 and 3 are Q and R respectively: what is $P(A \oplus B)$?
-\end{enumerate}
-\pagebreak
-
-So:
-\begin{align*}
-P(A') &= 1 - P(A)
-\\    &= 1 - \dfrac{1}{a} 
-\\    &= \dfrac{a - 1}{a} \\
-P(B') &= 1 - P(B)
-\\    &= \dfrac{b - 1}{b} \\
-Q = P(A\cap B') &= P(A) * P(B')
-\\    &= \dfrac{b - 1}{ab} \\
-R = P(B\cap A') &= P(B) * P(A')
-\\   &= \dfrac{a - 1}{ab}
-\end{align*}
-Short version:
-\begin{align*}
-Q &= \dfrac{b-1}{ab} \\
-R &= \dfrac{a-1}{ab}
-\end{align*}
-
-Now, let's answer the problem:
-
-\begin{align*}
-P(A \oplus B) &= P(A \cap B') + P(A' \cap B) + 0 \\
-              &= Q + R \\
-              &= \dfrac{a - 1}{ab} + \dfrac{b - 1}{ab} \\
-              &= \dfrac{(a-1) + (b-1)}{ab} \\
-              &= \dfrac{(a + b - 2)}{ab}
-\end{align*}
-\pagebreak
-\section{Givens}
-Sometimes we want to be able to assume that another subset of the sample space applies by default. In doing this, we modify our chances to be within the bounds of this new temporary "sample space".
-
-If we were to roll a fair 1d6 (r is the value and all events will be based on it), P(r is odd) = P(r $>$ 1) = .50. The chances of having rolled an odd number when we roll a number greater than 1 are 1 in 5; however, the chances of having rolled a number greater than 1 when we had already rolled an odd number are 2 in 3!
-
-\begin{equation}
-	P(A|B) = \dfrac{P(A\cap B)}{P(B)}
-\end{equation}
-
-Where A and B are events and "$A|B$" means "A given B", aka "A while under the assumption that B has occurred". We start off with the intersection because we want the chance that both have occurred. Then, we divide by the chance that the given circumstance had already occurred because we want to operate as if B is the sample space S in terms of determining probability.
-
-\subsection{Lemma: Commutativity of the Given}
-Normally, the given/event relationship is not commutative. However, due to the property of the intersection being that $A \cap B = B \cap A$ (commutativity of sets), the same can apply to their probabilities.
-\begin{equation}
-	P(A) = P(B) \iff P(A|B) + P(B|A)
-\end{equation}
+	\section{Set Intersection}
+		Intersection is the overlap of two or more sets and what elements are contained by all sets being intersected.
+		\begin{equation}
+			P(A \cup B) = P(A) + P(B) - P(A\cap B)
+			\label{Probability of union}
+		\end{equation}
+	
+		\subsection{Example: Setwise XOR}
+			\begin{abstract}
+				Given that $P(A) = \frac{1}{a}$ and $P(B) = \frac{1}{b}$ and that $P(A\cap B) = P(B\cap A) = \frac{1}{ab}$, find $P(X)$ s.t. $X = A \oplus B = (A' \cap B) \cup (A \cap B')$.
+			\end{abstract}
+			Let's break this into four subproblems:
+			\begin{enumerate}
+				\item Find $P(A')$ and $P(B')$.
+				\item Find $P(A \cap B').$
+				\item Find $P(B \cap A').$
+				\item Suppose that the answer to questions 2 and 3 are Q and R respectively: what is $P(A \oplus B)$?
+			\end{enumerate}
+			\pagebreak
+			
+			So:
+			\begin{align*}
+			P(A') &= 1 - P(A) \\
+			      &= 1 - \dfrac{1}{a} \\
+			      &= \dfrac{a - 1}{a} \\\\
+			P(B') &= 1 - P(B) \\
+			      &= \dfrac{b - 1}{b} \\\\
+			Q     &= P(A\cap B')  \\
+			      &= P(A) * P(B') \\
+			      &= \dfrac{b - 1}{ab} \\\\
+			R     &= P(B\cap A') \\
+			      &= P(B) * P(A') \\
+			      &= \dfrac{a - 1}{ab}
+			\end{align*}
+			Short version:
+			\begin{align*}
+			Q &= \dfrac{b-1}{ab} \\
+			R &= \dfrac{a-1}{ab}
+			\end{align*}
+			
+			Now, let's answer the problem:
+			
+			\begin{align*}
+			P(A \oplus B) &= P(A \cap B') + P(A' \cap B) + 0 \\
+			              &= Q + R \\
+			              &= \dfrac{a - 1}{ab} + \dfrac{b - 1}{ab} \\
+			              &= \dfrac{(a-1) + (b-1)}{ab} \\
+			              &= \dfrac{(a + b - 2)}{ab}
+			\end{align*}	
+	\pagebreak
+	\section{Givens}
+		Sometimes we want to be able to assume that another subset of the sample space applies by default. In doing this, we modify our chances to be within the bounds of this new temporary "sample space".
+		
+		If we were to roll a fair 1d6 (r is the value and all events will be based on it), P(r is odd) = P(r $>$ 1) = .50. The chances of having rolled an odd number when we roll a number greater than 1 are 1 in 5; however, the chances of having rolled a number greater than 1 when we had already rolled an odd number are 2 in 3!
+		
+		\begin{equation}
+			P(A|B) = \dfrac{P(A\cap B)}{P(B)}
+		\end{equation}
+		
+		Where A and B are events and "$A|B$" means "A given B", aka "A while under the assumption that B has occurred". We start off with the intersection because we want the chance that both have occurred. Then, we divide by the chance that the given circumstance had already occurred because we want to operate as if B is the sample space S in terms of determining probability.
+		
+		\subsection{Lemma: Commutativity of the Given}
+			Normally, the given/event relationship is not commutative. However, due to the property of the intersection being that $A \cap B = B \cap A$ (commutativity of sets), the same can apply to their probabilities.
+			\begin{equation}
+				P(A) = P(B) \iff P(A|B) + P(B|A)
+			\end{equation}
 \end{document}
