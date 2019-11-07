@@ -1,0 +1,127 @@
+
+\documentclass[]{article}
+\usepackage{amsmath}
+
+%opening
+\title{Engineering Statistics Lectures XVI}
+\author{Notes by Jonathan Bender}
+\date{November 7, 2019}
+
+\begin{document}
+	
+	\maketitle
+	
+	\begin{abstract}
+		HW \#3 due today.
+		Opportunity \#1 given November 21, 2019 and due November 26, 2019.
+		Final opportunity given sometime during the week of December 10, 2019
+	\end{abstract}
+
+	Chapter 5 begins today!
+	
+	\section{Discrete Probability Functions}
+		\subsection{Uniform}
+			Each of the k values of x has equal probability. In example, rolling a die, selecting a 3-digit integer at random, et cetera.
+		\subsection{Mean}
+			For a set of k items indexed within X,
+			$$\mu_x = \sum_{x_i \in X}\dfrac{x_i}{k}$$
+		\subsection{Sample variance / population variance}
+			For this same definition as above,
+			$$\sigma_x^2 = \dfrac{1}{k-1}\sum_{x_i \in X}(x_i - \mu_x)^2$$
+	
+	\pagebreak
+	\section{Binomial PDF}
+		Four conditions for a binomial PDF exist:
+		
+		\begin{enumerate}
+			\item Some integer n fixed trials.
+			\item Each trial is a success or failure (S or F).
+			\item The trials are independent -- the occurrences of one trial do not affect the state of any subsequent trials.
+			\item P(S) = p = constant; the probability of success is in and of itself constant.
+		\end{enumerate}
+	
+		Very short version --  A binomial PDF is defined around constant, unchanging conditions by which one trial is completely independent of another. Any subject of change means that the circumstances are NOT a binomial PDF! A random variable X is a binomial random variable if the four conditions are met AND X is the number of successes in some number of n trials.
+		
+	\section{Example: Unfair coin.}
+		Flip an unfair coin 5 times such that S = tails and P(S) = $\frac{3}{4}$. What's P(X=4)?
+		
+		Define p to be P(S) and q to be P(F) = 1 - P(S).
+		
+		\begin{align*}
+			P(X=4) &= \binom{5}{4} * (\dfrac{3}{4})^4 * (1 - \frac{3}{4}) \\
+			       &= 5 * \frac{81}{256} * \frac{1}{4} \\
+			       &= \frac{405}{1024} \\
+			P(X=4) &\approx 0.3955 \\\\
+			P(X<3) &= \sum_{x=0}^{2} \binom{5}{x}p^x q^{(5-x)} \\
+			       &= \sum_{x=0}^{2} \frac{5!}{x!(5-x)!} (\frac{3}{4})^x(\frac{1}{4})^{(5-x)} \\
+			       &= \frac{53}{512}
+		\end{align*}
+		
+		If for any reason you are given a CDF table and you want to find an individual probability, take the value from the CDF table that you want and subtract the previous instance of the CDF.
+		
+		\pagebreak
+		
+		What if we make it 10 times instead, and P(S) = 0.6?
+		
+		\subsection{A. What is $\mu$?}
+			$\mu = np = 10 * 0.6 = 6$.
+			6 times on average -- we expect 6 successes and 4 failures on average.
+		\subsection{B. What is $\sigma_x^2$?}
+			$\sigma^2 = np(1-p) = npq = 10 * 0.6 * 0.4 = 2.4$.
+			So, the population variance is around 2.4.
+		\subsection{C. What is P($X \leq 3$)?}
+			\begin{align*}
+				 &\sum_{x=0}^{3}\binom{10}{x}(0.6)^x(0.4)^{10-x} \\
+				=& 0.05476
+			\end{align*}
+		\subsection{D. What is P($X > 5$)?}
+			= 1 - P($X \leq 5$).
+			= 1 - 0.3669
+		\subsection{E. What is P($X \in [3, 7]$)?}
+			P(X=7) - P(X=3) $\approx$ 0.7779
+
+	\pagebreak
+	\section{Brian has two pumps?}
+		
+		Spoz that Brian runs a gas station with two pumps.
+		
+		Let X be the fraction of time that a customer has to wait in line (only has two pumps) for the first pump. Let Y be the fraction of time that a customer has to wait in line for the other pump. Historically-speaking, after much data compiled and taken using python, the PDF f(x,y), given that 10 minutes is the maximum wait time possible:
+		\begin{align*}
+			f(x,y) = &\{A(2x + 3y)  &iff\   0\leq x\leq 1\}& \\
+			&\{            &       0\leq y\leq 1\}& \\
+			&\{            &                    \}& \\
+			&\{0           &       elsewhere    \}&
+		\end{align*}
+		
+		\subsection{A. Find A}
+			\begin{align*}
+			A      &= \frac{1}{F(x,y)} \\
+			\to F(x,y) &= \int_{y=0}^{y=1}\int_{x=0}^{x=1}(2x+3y)dxdy \\
+			&= \int_{y=0}^{y=1}(x^2 + 3xy)|_{x=0}^{x=1}dy \\
+			&= \int_{y=0}^{y=1}(1 + 3y)dy \\
+			&= [y + \frac{3}{2}y^2]_{y=0}^{y=1} \\
+			&= \frac{5}{2} \\
+			\\
+			\to A      &= \frac{2}{5}
+			\end{align*}
+			
+		\pagebreak
+		\subsection{B. Find $\mu_X, \mu_Y$}
+			Find $\mu_X$ by finding g(x):
+			
+			\begin{align*}
+				g(x)  &= \int_{y=0}^{y=1}\frac{2}{5}(2x+3y)dy \\
+				&= \frac{2}{5}[2xy + \frac{3}{2}y^2]_{y=0}^{y=1} \\
+				&= \frac{2}{5}[2x + \frac{3}{2}] \\
+				&= \frac{4x + 3}{5} \\\\
+				\to \mu_X &= \int_{x=0}^{x=1}\frac{4x^2+3x}{5}dx \\
+				&= \frac{\frac{4}{3}x^3 + \frac{3}{2}x^2}{5}|_{x=1} \\\\
+				\to \mu_X &= \frac{17}{30}
+			\end{align*}
+			
+			Find $\mu_Y$ by finding h(y):
+			
+			\begin{align*}
+				h(y)  &= \int_{x=0}^{y=1}\frac{2}{5}(2x+3y)dx
+			\end{align*}
+\end{document}
