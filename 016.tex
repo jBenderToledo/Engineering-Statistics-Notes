@@ -5,7 +5,7 @@
 %opening
 \title{Engineering Statistics Lectures XVI}
 \author{Notes by Jonathan Bender}
-\date{November 7, 2019}
+\date{November 7, 2019; November 12, 2019}
 
 \begin{document}
 	
@@ -14,7 +14,9 @@
 	\begin{abstract}
 		HW \#3 due today.
 		Opportunity \#1 given November 21, 2019 and due November 26, 2019.
-		Final opportunity given sometime during the week of December 10, 2019
+		Final opportunity given sometime during the week of December 10, 2019.
+		
+		Opportunity \#0 fixes are due Thursday, November 14.
 	\end{abstract}
 
 	Chapter 5 begins today!
@@ -79,49 +81,4 @@
 			= 1 - 0.3669
 		\subsection{E. What is P($X \in [3, 7]$)?}
 			P(X=7) - P(X=3) $\approx$ 0.7779
-
-	\pagebreak
-	\section{Brian has two pumps?}
-		
-		Spoz that Brian runs a gas station with two pumps.
-		
-		Let X be the fraction of time that a customer has to wait in line (only has two pumps) for the first pump. Let Y be the fraction of time that a customer has to wait in line for the other pump. Historically-speaking, after much data compiled and taken using python, the PDF f(x,y), given that 10 minutes is the maximum wait time possible:
-		\begin{align*}
-			f(x,y) = &\{A(2x + 3y)  &iff\   0\leq x\leq 1\}& \\
-			&\{            &       0\leq y\leq 1\}& \\
-			&\{            &                    \}& \\
-			&\{0           &       elsewhere    \}&
-		\end{align*}
-		
-		\subsection{A. Find A}
-			\begin{align*}
-			A      &= \frac{1}{F(x,y)} \\
-			\to F(x,y) &= \int_{y=0}^{y=1}\int_{x=0}^{x=1}(2x+3y)dxdy \\
-			&= \int_{y=0}^{y=1}(x^2 + 3xy)|_{x=0}^{x=1}dy \\
-			&= \int_{y=0}^{y=1}(1 + 3y)dy \\
-			&= [y + \frac{3}{2}y^2]_{y=0}^{y=1} \\
-			&= \frac{5}{2} \\
-			\\
-			\to A      &= \frac{2}{5}
-			\end{align*}
-			
-		\pagebreak
-		\subsection{B. Find $\mu_X, \mu_Y$}
-			Find $\mu_X$ by finding g(x):
-			
-			\begin{align*}
-				g(x)  &= \int_{y=0}^{y=1}\frac{2}{5}(2x+3y)dy \\
-				&= \frac{2}{5}[2xy + \frac{3}{2}y^2]_{y=0}^{y=1} \\
-				&= \frac{2}{5}[2x + \frac{3}{2}] \\
-				&= \frac{4x + 3}{5} \\\\
-				\to \mu_X &= \int_{x=0}^{x=1}\frac{4x^2+3x}{5}dx \\
-				&= \frac{\frac{4}{3}x^3 + \frac{3}{2}x^2}{5}|_{x=1} \\\\
-				\to \mu_X &= \frac{17}{30}
-			\end{align*}
-			
-			Find $\mu_Y$ by finding h(y):
-			
-			\begin{align*}
-				h(y)  &= \int_{x=0}^{y=1}\frac{2}{5}(2x+3y)dx
-			\end{align*}
 \end{document}

@@ -1,0 +1,69 @@
+
+\documentclass[]{article}
+\usepackage{amsmath}
+
+%opening
+\title{Engineering Statistics Lectures XVII}
+\author{Notes by Jonathan Bender}
+\date{November 14, 2019}
+
+\begin{document}
+	
+	\maketitle
+	
+	\begin{abstract}
+		Opportunity \#1 given November 26, 2019 and due November 26, 2019.
+		Final opportunity given sometime during the week of December 10, 2019.
+		LCCC community dinner on November 27, 2019 from 5:00 PM to 7:00 PM, room AT134.
+		
+		Opportunity \#1 Questions due Sunday November 24, 2019 by 8:00 PM by email. Questions can range from any section, focusing on material from Lecture 16 onward (Chapter 5).
+	\end{abstract}
+
+	\section{Hypergeometric Functions?}
+	
+		3 conditions:
+		\begin{enumerate}
+			\item Population is a finite set of some size N.
+			\item Members of the population are either a success or failure; there are a fixed number of successes K in the population.
+			\item Take a sample of size n from the population -- Each sample of size n is equally "likely". Let X be the number of successes in this sample set.
+			\item X is bounded: $max(0,\ n-[N-k]) \leq X \leq min(n,\ k)$ such that "n-[N-k]" is the minimum number of possible failures among the sample set.
+			\item $\mu_X = \dfrac{k}{N}(n)$
+			\item Finite population correction factor = $\dfrac{N-n}{N-1}$
+			\item $\sigma_X^2 = \dfrac{n * k}{N} * (1-\dfrac{k}{N}) * (\dfrac{N-n}{N-1}) = \mu_X * P(Fail) * (Finite\ population\ correction\ factor)$
+		\end{enumerate}
+	
+		Suppose that N = 16, k = 4, n = 7: The bounds are $max(0,7-[16-4]),min(4,7)$, which simplifies to [0, 4].
+		
+	
+	\pagebreak
+	\section{Noah has raccoons?}
+		
+		Spoz Noah wants to yell at North Ridgeville metropolis about his raccoon problem. Suppose there are 30 raccoons near his house. Noah captures and tags 11 raccoons, then he sets them free. Later, Noah captures a sample set of size 6. Let's define a success as one of the previously-tagged raccoons being currently captured.
+		
+		\subsection{A. Mean?}
+			$\mu_X = \dfrac{11}{30}*6 = \dfrac{22}{10} = 2.2$ successes on average.
+		
+		\subsection{B. Bounds?}
+			Minimum bound is the maximum of 0 and the number of failures, or 0 and 6-19. So, 0. Maximum bound is the minimum of the sample size and the number of successes, which is the sample size. So, [0,6].
+		
+		\subsection{C. P(more than two, no more than four) being tagged?}
+		
+			P($2<X\leq 4$) = P($X=3 \cap X=4$) = $P(X=3) \cup P(X=4)$
+			
+			P(3) = $\dfrac{\binom{11}{3} * \binom{19}{3}}{\binom{30}{6}}$
+			
+			P(4) = $\dfrac{\binom{11}{4} * \binom{19}{2}}{\binom{30}{6}}$
+			
+			Result is left as an exercise in arithmetic: $\dfrac{545}{1496}$
+		
+		\subsection{D. Variance?}
+			$\sigma_X^2 = \mu_X * P(Fail) * (Finite\ population\ correction\ factor)$
+			$ = \dfrac{22}{10} * (\dfrac{19}{30}) * (\dfrac{30-6}{30-1})$
+			
+	\section{Ian has skunks?!}
+		Spoz we have N skunks; Ian captures and tags 5. He then captures 10 at another time. Because the number of untagged skunks is 8, we know that there are at least 13 skunks in circulation, but this is ultimately an inconclusive way of estimating the value. Still -- valuable for the future.
+		
+		We assume that, if $\mu_X = 2 = (\dfrac{k}{N})n = (\dfrac{5}{N})10$, then $N = \dfrac{50}{2} = 25$. This can be used for estimating animal populations.
+		
+	
+\end{document}
