@@ -1,0 +1,63 @@
+
+\documentclass[]{article}
+\usepackage{amsmath}
+
+%opening
+\title{Engineering Statistics Lectures XVIII}
+\author{Notes by Jonathan Bender}
+\date{November 19, 2019}
+
+\begin{document}
+	
+	\maketitle
+	
+	\begin{abstract}
+		Opportunity \#1 given November 26, 2019 and due November 27, 2019 at 6:00 PM.
+		Final opportunity given sometime during the week of December 10, 2019.
+		LCCC community dinner on November 27, 2019 from 5:00 PM to 7:00 PM, room AT134.
+		
+		Opportunity \#1 Questions due Sunday November 24, 2019 by 8:00 PM by email. Questions can range from any .section, focusing on material from Lecture 16 onward (Chapter 5).
+		
+		For optional homework, take a look at Chapter 5.1, 5.3, 5.9, 5.11, 5.29, 5.33, and 5.35 is particularly interesting.
+	\end{abstract}
+
+	\section{Negative Binomial}
+		4 conditions:
+		\begin{enumerate}
+			\item Independent trials.
+			\item Trial can be a success or a failure (S or F).
+			\item P(S) is constant across all trials.
+			\item Trials continue until k successes are observed.
+		\end{enumerate}
+		For all positive integers k. X is the total number of trials before/including the k$^{th}$ success. Spoz k=3: $$P(X=x) = \binom{x-1}{k-1} * p^{k-1}q^{(x-k)-1} * p$$
+		
+		Such that the $p^{k-1}$ term refers to the number of successes prior to the k$^{th}$ success and the $q^{x-k}$ term refers to the number of failures prior to the k$^{th}$ success. The "* p" term on the end refers to the fact that for any negative binomial problem of length x, there will ALWAYS be some combination of x-1 successes/failures followed by a single success on the end. SO:
+		$$P(X=x) = \binom{x-1}{k-1} * p^{k}q^{x-k}$$
+		Because the sum of the exponents of p and q must be x due to there having been x trials!
+		
+	\section{BASEBALL}
+		Spoz the Tigers and Indians play a 3-game series. What's the chance that the Tigers win the series (Best of three -- at most one loss)? P(S) = 0.6
+		
+		$$P(X=2)=\binom{1}{1}p^2 q^0 = 0.36$$
+		$$P(X=3) = \binom{2}{1}p^2q^1 = 0.288$$
+		
+		Therefore, the probability that the Tigers win the series is P(2) + P(3) = 0.648.
+		
+		That's no fun, though.
+		
+		What if the tigers and indians play a 5-game series? What's the new chance of winning? ? Well, that's just the sum of all possible chances from X=3 to X=5. SO:
+		
+		$$P(X) = \sum_{x=3}^{5}\binom{x-1}{2} * p^3 q^{x-3}$$
+		So: $$P(X) = \binom{2}{2}p^3 q^0 + \binom{3}{2} p^3 q^1 + \binom{4}{2} p^3 q^2$$
+		So: $$P(X) = 0.2593$$
+		The arithmetic has been left as an exercise.
+		
+	\section{Average of a Negative Binomial}
+		$\mu = \dfrac{k}{p}$ for reasons that are left as an investigative proof to the reader.
+		
+	\section{Sample variance of a Negative Binomial}
+		$\sigma^2 = \dfrac{k(1-p)}{p^2} = \dfrac{k}{p}q = \mu * q$
+		For any constant p.
+		
+	
+\end{document}
