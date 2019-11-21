@@ -1,0 +1,58 @@
+
+\documentclass[]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+%opening
+\title{Engineering Statistics Lectures XIX}
+\author{Notes by Jonathan Bender}
+\date{November 21, 2019}
+
+\begin{document}
+	
+	\maketitle
+	
+	\begin{abstract}
+		Opportunity \#1 given November 26, 2019 and due November 27, 2019 at 6:00 PM.
+		Final opportunity given December 5, 2019 -- due December 9, 2019.
+		LCCC community dinner on November 27, 2019 from 5:00 PM to 7:00 PM, room AT134.
+		
+		Opportunity \#1 Questions due Sunday November 24, 2019 by 8:00 PM by email. Questions can range from any .section, focusing on material from Lecture 16 onward (Chapter 5).
+		
+		For optional homework, take a look at Chapter 5.1, 5.3, 5.9, 5.11, 5.29, 5.33, and 5.35 is particularly interesting.
+	\end{abstract}
+
+	\section{Normal PDF}
+		The Normal Distribution. The bell curve. The big squiggly bumpy thing. It is used to approximate many, many, many natural phenomena involving population data. Typically, in a one-modal curve, the average is positioned AT the bump.
+		
+		The statistics of non-normally-distributed data sets tend to follow a normal curve. Even if the original data isn't normally distributed, the statistics pertaining to that data are. Is it a law? Probably not. 
+		
+		\subsection{Definition of Normal Curve by Gaussian Distribution}
+			A random variable X is normally distributed with a mean D and standard deviation J.
+			The typical way of dealing with expressing it using the trancendental function is as follows:
+			
+			$$(\forall X\in \mathbf{R})\ f(X) = \dfrac{1}{\sqrt{2\pi}*J} * e^{-\dfrac{(X-D)^2}{2J^2}}$$
+			
+			You can prove it to be a valid PDF by it being positive for all of the applicable domain and asserting that the integral over its domain is 1.
+			
+			\begin{align*}
+				u &:= \dfrac{X-D}{J} \\
+				\to du &= \dfrac{X}{J} \\
+				\to I &=\int_\mathbf{R} \dfrac{1}{\sqrt{2\pi}}\ exp(-\dfrac{u^2}{2})du \\
+				&= \sqrt{[\int_\mathbf{R} \dfrac{1}{\sqrt{2\pi}}\ exp(-\dfrac{u^2}{2})du]^2} \\
+				&= \sqrt{(\int_\mathbf{R} \dfrac{1}{\sqrt{2\pi}}\ exp(-\dfrac{u^2}{2})du)(\int_\mathbf{R} \dfrac{1}{\sqrt{2\pi}}\ exp(-\dfrac{u^2}{2})du)} \\
+				&= \sqrt{\dfrac{1}{2\pi}(\int_\mathbf{R}exp(-\dfrac{u^2}{2})du)(\int_\mathbf{R}exp(-\dfrac{v^2}{2})dv)}\ s.t. (u,v)=(a,b) \\
+				&= \sqrt{\dfrac{1}{2\pi}\int_{u\in\mathbf{R}}\int_{v\in\mathbf{R}}exp(-\dfrac{a^2+b^2}{2})dvdu} \\
+				r^2 &:= \dfrac{a^2+b^2}{2} \\
+				\to I &= \sqrt{\dfrac{1}{2\pi}\int_0^{2\pi}\int_{r\in\mathbf{R}+}exp(-\dfrac{r^2}{2})(rdrd\theta)}\ by\ Jacobian\ change\ of\ base \\
+				&= \sqrt{\dfrac{1}{2\pi}\int_0^{2\pi}d\theta \int_{r\in\mathbf{R}+}exp(-\dfrac{r^2}{2})(rdr)} \\
+				w &:= \dfrac{r^2}{2} \to dw = rdr \\
+				\to I &= \sqrt{\dfrac{1}{2\pi}[2\pi]\int_0^{+\infty} exp(-u)du} \\
+				&= \sqrt{[-e^{-u}]_{u=0}^{u=+\infty}]}
+				= \sqrt{-[0 - 1]} = \sqrt{-[-1]} = \sqrt{1} \\
+				\to I &= 1 \\
+				\to & \int_{X\in\mathbf{R}}f(X)dX = 1\\
+				&\blacksquare
+			\end{align*}
+			
+\end{document}
