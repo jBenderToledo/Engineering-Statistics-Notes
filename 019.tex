@@ -44,8 +44,8 @@
 				&= \sqrt{\dfrac{1}{2\pi}(\int_\mathbf{R}exp(-\dfrac{u^2}{2})du)(\int_\mathbf{R}exp(-\dfrac{v^2}{2})dv)}\ s.t. (u,v)=(a,b) \\
 				&= \sqrt{\dfrac{1}{2\pi}\int_{u\in\mathbf{R}}\int_{v\in\mathbf{R}}exp(-\dfrac{a^2+b^2}{2})dvdu} \\
 				r^2 &:= \dfrac{a^2+b^2}{2} \\
-				\to I &= \sqrt{\dfrac{1}{2\pi}\int_0^{2\pi}\int_{r\in\mathbf{R}+}exp(-\dfrac{r^2}{2})(rdrd\theta)}\ by\ Jacobian\ change\ of\ base \\
-				&= \sqrt{\dfrac{1}{2\pi}\int_0^{2\pi}d\theta \int_{r\in\mathbf{R}+}exp(-\dfrac{r^2}{2})(rdr)} \\
+				\to I &= \sqrt{\dfrac{1}{2\pi}\int_0^{2\pi}\int_{r\in\mathbf{R}^+}exp(-\dfrac{r^2}{2})(rdrd\theta)}\ by\ Jacobian\ change\ of\ base \\
+				&= \sqrt{\dfrac{1}{2\pi}\int_0^{2\pi}d\theta \int_{r\in\mathbf{R}^+}exp(-\dfrac{r^2}{2})(rdr)} \\
 				w &:= \dfrac{r^2}{2} \to dw = rdr \\
 				\to I &= \sqrt{\dfrac{1}{2\pi}[2\pi]\int_0^{+\infty} exp(-u)du} \\
 				&= \sqrt{[-e^{-u}]_{u=0}^{u=+\infty}]}
