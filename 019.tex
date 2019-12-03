@@ -31,13 +31,13 @@
 			A random variable X is normally distributed with a mean D and standard deviation J.
 			The typical way of dealing with expressing it using the trancendental function is as follows:
 			
-			$$(\forall X\in \mathbf{R})\ f(X) = \dfrac{1}{\sqrt{2\pi}*J} * \exp{(-\dfrac{(X-D)^2}{2J^2})}$$
+			$$(\forall X\in \mathbf{R})\ f(X) = \dfrac{1}{\sqrt{2\pi}*\sigma} * \exp{(-\dfrac{(X-\mu)^2}{2\sigma^2})}$$
 			
 			Where $exp(A) \equiv e^A$ and the two are used interchangeably for legibility. You can prove it to be a valid PDF by it being positive for all of the applicable domain and asserting that the integral over its domain is 1. A big problem with that is that its antiderivative is a little... silly. It is essentially a massive transformation of $\exp{(-x^2)}$. See the next page for the proof as a valid PDF.
 			
 			\begin{align*}
-				u &:= \dfrac{X-D}{J} \\
-				\to du &= \dfrac{X}{J} \\
+				u &:= \dfrac{x-\mu}{\sigma} \\
+				\to du &= \dfrac{dx}{\sigma} \\
 				\to I &=\int_\mathbf{R} \dfrac{1}{\sqrt{2\pi}}\ exp(-\dfrac{u^2}{2})du \\
 				&= \sqrt{[\int_\mathbf{R} \dfrac{1}{\sqrt{2\pi}}\ exp(-\dfrac{u^2}{2})du]^2} \\
 				&= \sqrt{(\int_\mathbf{R} \dfrac{1}{\sqrt{2\pi}}\ exp(-\dfrac{u^2}{2})du)(\int_\mathbf{R} \dfrac{1}{\sqrt{2\pi}}\ exp(-\dfrac{u^2}{2})du)} \\
