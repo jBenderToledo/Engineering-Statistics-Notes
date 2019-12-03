@@ -16,5 +16,41 @@
 		Final opportunity given December 5, 2019 -- due December 9, 2019.
 	\end{abstract}
 
-	\section{title}
+	\section{More normal curve stuff!}
+		The normal curve is defined as follows:
+		$$f(x,\mu,\sigma) = \dfrac{1}{(\sqrt{2\pi})\sigma}exp(\dfrac{-(x-\mu)^2}{2\sigma^2})$$
+		Well, the standard curve ($\sigma=1,\mu=0$) is:
+		$$std(z) = \dfrac{1}{\sqrt{2\pi}}exp(\dfrac{-1}{2}z^2)\ s.t.\ z=\dfrac{x-\mu}{\sigma}$$
+		So,
+		$$P(a<X<b) = P(\dfrac{a-\mu}{\sigma} < Z < \dfrac{b-\mu}{\sigma})$$
+		
+		There are tables in the book that get cumulative distribution values F(z) situated based on standard deviation distance from the mean. std(z) is just a genericization of x in terms of standard deviations away from the mean -- the standard deviation is scaled to 1, and the mean is transformed out.
+		
+	\pagebreak
+	\section{Example: Speeds on the highway!}
+		Suppose that the speed of a randomly-selected vehicle from 6:00 PM to 8:00 PM over a highway is a standard r.v. X such that ($\mu = 74, \sigma = 3.5$): What's the probability that a car is going between 68 and 79 miles per hour?
+		
+		\begin{align*}
+			P(68 < X < 79)? Z  &\equiv \dfrac{X - 74}{3.5} \\
+			\to P(68 < X < 79) &= P(\dfrac{68-74}{3.5} < Z < \dfrac{79-74}{3.5}) \\
+			                   &= P(\dfrac{-6}{3.5} < Z < \dfrac{5}{3.5}) \\
+			                   &= P(\dfrac{-12}{7} < Z < \dfrac{10}{7}) \\
+			                   &= P(-1.71 < Z < 1.43) \\
+			                   &= F(1.43) - F(-1.71)
+		\end{align*}
+		
+		Well, Deputy Donut (Professor's name choice, not mine!) decides that he will cite the top 13.5\% of the drivers. What speed is he going to use as his boundary?
+		Well, there is a value $Z_0$ in the CDF such that F($Z_0$) = 86.5\%. This value is the number of standard deviations ahead of the mean that will be our speed value. In the specific case here, 0.8650 is somewhere between F(1.10) = 0.8643 and F(1.11) = 0.8665. The rate of change is approximately $\dfrac{0.0022}{0.01}$; Our starting and ending values are (1.100, 0.0000) and (1.101, 0.0022); where is the second value 0.0007?
+		
+		$$0.0007 = \dfrac{0.0022}{0.01}(Z_0 -1.100)$$
+		$$\to Z_0 = \dfrac{0.01}{0.0022}0.0007 + 1.100$$
+		$$\to Z_0 \approx 1.103181$$
+		$$Z_0 = \dfrac{X_0 - 74}{3.5}$$
+		$$\to X_0 = 3.5 * 1.103181 + 74$$
+		
+		$$\to X_0 = 77.86mph$$
+		
+		So, Deputy Donut is going to keep to people who are going about 77.86 miles per hour or higher.
+		
+		Between now and Thursday, 12/5/2019, Take a look at Chapter 6's problems concerning the normal distribution.
 \end{document}
